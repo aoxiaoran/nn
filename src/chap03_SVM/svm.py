@@ -97,7 +97,7 @@ class SVM():
            x = np.expand_dims(x, axis=0)  # 处理单样本输入
         decision_values = np.dot(x, self.w) + self.b  # logits = x·w + b
         # 返回预测标签（0或1）
-        return np.where(decision_values >= 0, 1, -1)
+         return np.where(decision_values >= 0, 1, -1)
 
 
 if __name__ == '__main__':
