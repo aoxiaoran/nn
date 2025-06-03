@@ -189,7 +189,7 @@ def main(x_train, y_train, use_gradient_descent=False):
 
     # 最小二乘法求解权重
     w_lsq = np.dot(np.linalg.pinv(phi), y_train)
-
+ 
     w_gd = None
     if use_gradient_descent:
         # 梯度下降求解权重（缩进修正）
