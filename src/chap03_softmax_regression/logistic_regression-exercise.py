@@ -157,12 +157,16 @@ if __name__ == '__main__':
 f, ax = plt.subplots(figsize=(6,4))
 # 设置图形的总标题
 f.suptitle('Logistic Regression Example', fontsize=15)
+
 # 设置y轴标签
 plt.ylabel('Y')
+
 # 设置x轴标签
 plt.xlabel('X')
+
 # 设置x轴的范围
 ax.set_xlim(0, 10)
+
 # 设置y轴的范围
 ax.set_ylim(0, 10)
 
