@@ -73,6 +73,8 @@ class SoftmaxRegression(tf.Module):
         :return: softmax 概率分布，shape = (N, num_classes)
         """
         logits = tf.matmul(x, self.W) + self.b
+         # 添加数值稳定性处理：减去最大值防止指数爆炸
+         logits = logits - tf.reduce_max(logits, axis=1, keepdims=True)
         return tf.nn.softmax(logits)
 
 #计算多分类问题中的交叉熵损失以及准确率，适用于处理具有多个类别的分类任务
