@@ -271,7 +271,7 @@ with tf.GradientTape() as tape:
 
 # In[10]:
 
-
+# 修改myModel类的初始化，添加模型保存路径
 class myModel:
     def __init__(self):
         
