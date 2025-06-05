@@ -80,7 +80,7 @@ class CNN(nn.Module):
         self.out2 = nn.Linear(1024, 10, bias=True)
 
     def forward(self, x):
-        # 前向传播过程
+        # 保持原有前向传播不变
         x = self.conv1(x)  # 通过第一个卷积层
         x = self.conv2(x)  # 通过第二个卷积层
         x = x.view(x.size(0), -1)  # 将特征图展平为一维向量，保留batch维度
