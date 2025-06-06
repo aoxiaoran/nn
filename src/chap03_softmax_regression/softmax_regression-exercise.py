@@ -8,6 +8,10 @@
 # #### '<font color="green">o</font>' 从高斯分布采样  (X, Y) ~ N(6, 3, 1, 1, 0)<br>
 # #### '<font color="red">*</font>' 从高斯分布采样  (X, Y) ~ N(7, 7, 1, 1, 0)<br>
 
+"""
+本示例演示了如何使用TensorFlow实现Softmax回归模型解决多分类问题。
+数据集由三个高斯分布生成的样本组成，模型通过训练学习分类决策边界。
+"""
 # In[1]:
 
 import tensorflow as tf
