@@ -4,7 +4,10 @@
 # ### 生成数据集，看明白即可无需填写代码
 # #### '<font color="blue">+</font>' 从高斯分布采样 (X, Y) ~ N(3, 6, 1, 1, 0).<br>
 # #### '<font color="green">o</font>' 从高斯分布采样 (X, Y) ~ N(6, 3, 1, 1, 0)<br>
-
+"""
+这个示例演示了如何使用TensorFlow实现一个简单的逻辑回归模型，用于二分类问题。
+数据集由两个高斯分布生成的正负样本组成，模型通过训练学习决策边界。
+"""
 # 导入 TensorFlow 深度学习框架
 import tensorflow as tf
 # 导入 matplotlib 的 pyplot 模块，用于数据可视化
