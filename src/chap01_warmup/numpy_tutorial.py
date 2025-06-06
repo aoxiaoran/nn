@@ -37,7 +37,7 @@ a = np.zeros((3, 3), dtype=int)
 b = np.ones((4, 5))
 # 单位矩阵，4x4
 c = np.eye(4)
-# 随机数矩阵，3x2
+# 随机数矩阵，3x2 (已设置随机种子)
 np.random.seed(42)  # 在生成随机数前设置种子
 d = np.random.random((3, 2))
 
