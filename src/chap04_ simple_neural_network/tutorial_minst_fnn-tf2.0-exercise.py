@@ -137,6 +137,7 @@ def test(model, x, y):
 
 # In[14]:
 
+"""完整的训练流程"""
 
 train_data, test_data = mnist_dataset()
 for epoch in range(50):
