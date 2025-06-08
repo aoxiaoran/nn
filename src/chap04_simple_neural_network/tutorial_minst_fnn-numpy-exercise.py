@@ -33,7 +33,7 @@ def mnist_dataset():
 # 定义矩阵乘法层
 class Matmul:
     def __init__(self):
-        self.mem = {}
+        self.mem = {}# 缓存中间结果，用于反向传播
         
     def forward(self, x, W):
         # 前向传播：执行矩阵乘法，计算 h = x @ W
