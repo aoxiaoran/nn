@@ -31,12 +31,13 @@ import string
 
 def randomString(stringLength):
     """Generate a random string with the combination of lowercase and uppercase letters """
-
+   """生成指定长度的随机大写字母字符串"""
 
     letters = string.ascii_uppercase
     return ''.join(random.choice(letters) for i in range(stringLength))
 
 def get_batch(batch_size, length):
+     """生成训练批次数据（原始序列、编码器输入、解码器输入、目标输出）"""
     batched_examples = [randomString(length) for i in range(batch_size)]
     enc_x = [[ord(ch)-ord('A')+1 for ch in list(exp)] for exp in batched_examples]
     y = [[o for o in reversed(e_idx)] for e_idx in enc_x]
