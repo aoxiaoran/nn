@@ -21,7 +21,7 @@ import matplotlib.cm as cm
 # 导入 NumPy 数值计算库
 import numpy as np
 
-# 设置随机种子（确保结果可复现）
+# 设置随机种子（ 确保结果可复现）
 # NumPy的随机种子
 np.random.seed(42)
 # TensorFlow的随机种子
