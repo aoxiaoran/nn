@@ -13,7 +13,7 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras import layers, optimizers, datasets
 
-# 定义特殊标记：开始标记和结束标记
+# 定义特殊标记：开始标记和结束标记（用于序列生成的起始和终止信号）
 start_token = 'bos'  # Beginning of sentence
 end_token = 'eos'    # End of sentence
 
