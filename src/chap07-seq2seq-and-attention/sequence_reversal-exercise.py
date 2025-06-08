@@ -49,6 +49,16 @@ def random_string(length):
     # 最终返回生成的随机字符串
 
 def get_batch(batch_size, length):
+    """
+    生成一批用于训练的随机字符串及其逆序版本，并转换为模型所需的索引格式
+    
+    参数:
+        batch_size (int): 批次大小
+        length (int): 每个字符串的长度
+        
+    返回:
+        tuple: 包含原始字符串、编码器输入、解码器输入和解码器目标的元组
+    """
     # 生成batch_size个随机字符串
     batched_examples = [randomString(length) for i in range(batch_size)]
     # 转成索引
