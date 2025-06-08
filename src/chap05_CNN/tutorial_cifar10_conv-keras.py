@@ -34,6 +34,7 @@ def cifar10_dataset():
     # x: 图像数据 (50000张训练图像 + 10000张测试图像，32x32像素RGB)
     # y: 对应标签 (0-9的整数标签)
     (x, y), (x_test, y_test) = datasets.cifar10.load_data()
+    # 加载原始数据集（50000训练图像，10000测试图像，32x32x3 RGB格式）
     # 创建训练数据集
     ds = tf.data.Dataset.from_tensor_slices((x, y))
     ds = ds.map(prepare_mnist_features_and_labels)
