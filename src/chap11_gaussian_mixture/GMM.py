@@ -5,8 +5,22 @@ import matplotlib.pyplot as plt
 
 # 生成混合高斯分布数据
 def generate_data(n_samples=1000):
+ patch-7
     np.random.seed(42)# 设置随机种子确保可复现性
     # 定义三个高斯分布的中心点（二维平面上的坐标）
+
+    """生成混合高斯分布数据集
+    
+    参数:
+        n_samples: 总样本数量 (默认=1000)
+    
+    返回:
+        X: 特征矩阵 (n_samples, 2)
+        y_true: 真实标签 (n_samples,)
+    """
+    np.random.seed(42)  # 固定随机种子以确保结果可复现
+    # 定义三个高斯分布的中心点
+ main
     mu_true = np.array([ 
         [0, 0],  # 第一个高斯分布的均值
         [5, 5],  # 第二个高斯分布的均值
@@ -30,6 +44,12 @@ def generate_data(n_samples=1000):
     # 计算每个成分生成的样本数
     samples_per_component = (weights_true * n_samples).astype(int)
     
+    # 确保样本总数正确（由于浮点转换可能有误差）
+    total_samples = np.sum(samples_per_component)
+    if total_samples < n_samples:
+        # 将缺少的样本添加到权重最大的成分中
+        samples_per_component[np.argmax(weights_true)] += n_samples - total_samples
+    
     # 用于存储每个高斯分布生成的数据点
     X_list = []  
     
@@ -38,6 +58,7 @@ def generate_data(n_samples=1000):
     
     # 从第i个高斯分布生成样本
     for i in range(n_components): 
+        #生成多元正态分布样本
         X_i = np.random.multivariate_normal(mu_true[i], sigma_true[i], samples_per_component[i])
         # 将生成的样本添加到列表
         X_list.append(X_i) 
