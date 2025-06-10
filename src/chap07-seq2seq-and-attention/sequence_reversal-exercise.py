@@ -24,6 +24,7 @@ from tensorflow.keras import datasets, layers, optimizers
 # 同一库的子模块合并导入，按字母顺序排列
 import random
 import string
+# 用于生成随机字符串的标准库
 
 # ## 玩具序列数据生成
 # 生成只包含[A-Z]的字符串，并且将encoder输入以及decoder输入以及decoder输出准备好（转成index）
