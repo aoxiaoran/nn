@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt # 导入Matplotlib的pyplot模块并命名为plt
 
 # 下面这段代码从文件中读取数据，然后把数据拆分成特征和标签，最后以 NumPy 数组的形式返回
 def load_data(filename):
-    """载入数据。
+    """载入数据。载入数据文件，拆分为特征和标签
     Args:
         filename: 数据文件的路径
     Returns:
@@ -58,7 +58,7 @@ def multinomial_basis(x, feature_num=10):
     ret = [x**i for i in range(1, feature_num + 1)]
     # 将生成的列表合并成 shape(N, feature_num) 的二维数组
     ret = np.concatenate(ret, axis=1)
-    # ==========
+    # 
     return ret
 
 
