@@ -13,7 +13,7 @@ from tensorflow.keras import layers, optimizers, datasets
 
 # 设置TensorFlow日志级别，避免输出过多无关信息
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # 可选值：{'0', '1', '2'}
-
+# 关键修改：减少控制台无关输出，便于聚焦训练过程
 def mnist_dataset():
     """
     加载MNIST数据集并进行预处理：
@@ -21,11 +21,12 @@ def mnist_dataset():
     - 像素值归一化到[0, 1]区间
     - 保持原始数据类型（图像为float32，标签为int64）
     """
-    (x, y), (x_test, y_test) = datasets.mnist.load_data()
+    (x, y), (x_test, y_test) = datasets.mnist.load_data() # 加载原始数据
+    # 关键预处理步骤：
     # 归一化像素值到[0, 1]
-    x = x / 255.0
+    x = x / 255.0 # 归一化像素值
     x_test = x_test / 255.0
-    return (x, y), (x_test, y_test)
+    return (x, y), (x_test, y_test) # 返回预处理的数据集
 
 # In[8]:
 
@@ -38,10 +39,11 @@ def mnist_dataset():
 class MyModel:
     def __init__(self):
         ####################
-        '''声明模型对应的参数'''
+        '''声明模型对应的参数（两层全连接网络）'''
         ####################
         # 初始化权重和偏置
         # 输入层784 -> 隐藏层128
+        # 随机正态分布
         self.W1 = tf.Variable(tf.random.normal([784, 128], stddev=0.1))
         self.b1 = tf.Variable(tf.zeros([128]))
         # 隐藏层128 -> 输出层10
